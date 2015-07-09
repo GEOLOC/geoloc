@@ -1,34 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>GEOLOC by GEOLOC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <title>GEOLOC by GEOLOC</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>GEOLOC</h1>
-        <h2>Geolocalization, text mining, georeference</h2>
-        <a href="https://github.com/GEOLOC/Text_geolocalization" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+    <section class="page-header">
+      <h1 class="project-name">GEOLOC</h1>
+      <h2 class="project-tagline">Geolocalization, text mining, georeference</h2>
+      <a href="https://github.com/GEOLOC/Text_geolocalization" class="btn">View on GitHub</a>
+      <a href="https://github.com/GEOLOC/Text_geolocalization/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/GEOLOC/Text_geolocalization/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+    <section class="main-content">
+      <h1>
 <a id="geolocate-package-for-any-text" class="anchor" href="#geolocate-package-for-any-text" aria-hidden="true"><span class="octicon octicon-link"></span></a>Geolocate package for any text</h1>
 
 <p>This package can be used on any text that have a word that can be geolocalize,for instance the name of a city, a town and important monument or place.</p>
@@ -38,7 +29,7 @@
 <h2>
 <a id="how-the-script-geolocalized" class="anchor" href="#how-the-script-geolocalized" aria-hidden="true"><span class="octicon octicon-link"></span></a>How the script geolocalized.</h2>
 
-<p><img src="https://cloud.githubusercontent.com/assets/7750268/8571386/b6fbdf8a-2586-11e5-8291-af5e14589f52.png" alt=""></p>
+<p><img src="https://cloud.githubusercontent.com/assets/7750268/8593662/07bfe296-263a-11e5-8f42-fe870f0ef8ef.png" alt=""></p>
 
 <p>The script use the wikipedia API <em>(Application Programming Interface)</em> in a first stage, each time it finds a new word that begin with capital letter it connects with Wikipedia and checks if the  word can be geolocalized. If the word has not been geolocalized the program save the word in the python dictionary with its coordinates. In this way the search for the next time its going to be more efficient because if the word is on the library we have not to connect again with the Wikipedia API </p>
 
@@ -51,9 +42,24 @@ Also , the Wikipedia API give us the chance to create contents of "augmented rea
 <h2>
 <a id="some-examples" class="anchor" href="#some-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some Examples</h2>
 
-<p><a href="https://public.tableau.com/shared/3FSSCDGSX?:display_count=yes">News by date and place</a></p>
+<p><img src="https://cloud.githubusercontent.com/assets/7750268/8593697/4e1f3e08-263a-11e5-97ee-491c7b02e933.png" alt=""></p>
 
-<p><img src="http://cdb.io/1G5AnPG" alt=""></p>
+<p>The figure above is an example of a heat map day by day of the news activity during 2014.</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/7750268/8593743/c2abf31a-263a-11e5-84f3-5227f8ccd616.png" alt=""></p>
+
+<p>In the previous figure we can also observe a head map, but we modify the period of change to perceive better  dynamic of the news saliency on different places. </p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/7750268/8593797/3b777e2c-263b-11e5-8f37-5427c78a8081.png" alt=""></p>
+
+<p>Finally, in the figure above we show the set of news on the territory , when you select a node immediately you see the code of the different news that are associated with that place. </p>
+
+<p>The interactive figures are published in this link, also you can find a more detail explanation <a href="http://geolocnews.tumblr.com/Geoloc">http://geolocnews.tumblr.com/Geoloc</a></p>
+
+<h2>
+<a id="how-to-run-this-script" class="anchor" href="#how-to-run-this-script" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to run this script</h2>
+
+<p>This script is in python to run you need the following packages: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
 
 <h2>
 <a id="authors-alphabetic-order" class="anchor" href="#authors-alphabetic-order" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors (alphabetic order)</h2>
@@ -64,25 +70,16 @@ Also , the Wikipedia API give us the chance to create contents of "augmented rea
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-        </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/GEOLOC/Text_geolocalization/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/GEOLOC/Text_geolocalization/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/GEOLOC/Text_geolocalization">GEOLOC</a> is maintained by <a href="https://github.com/GEOLOC">GEOLOC</a>.</span>
 
-          <p class="repo-owner"><a href="https://github.com/GEOLOC/Text_geolocalization"></a> is maintained by <a href="https://github.com/GEOLOC">GEOLOC</a>.</p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+    </section>
 
   
   </body>
 </html>
+
