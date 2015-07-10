@@ -42,13 +42,16 @@
 
 <p><img src="https://cloud.githubusercontent.com/assets/7750268/8619618/bab088c2-2718-11e5-87a4-11839a043acb.PNG" alt=""></p>
 
-<p>The script use the wikipedia API <em>(Application Programming Interface)</em> in a first stage, each time it finds a new word that begin with capital letter it connects with Wikipedia and checks if the  word can be geolocalized. If the word has not been geolocalized the program save the word in the python dictionary with its coordinates. In this way the search for the next time its going to be more efficient because if the word is on the library we have not to connect again with the Wikipedia API </p>
+<p>The software uses the wikipedia API <em>(Application Programming Interface)</em> in a first stage. Each time it comes across a new word (or a compound expression) that begins with a capital letter, our program connects with Wikipedia and checks if the word page has coordinates. If it doesn’t, or there is no article for this word, the word is saved in our dictionary with a 0. On the other hand, if the Wikipedia api  positively responds to our coordinate request, we store both the coordinates and the word.
+Therefore, if we happen to encounter again one of these words, we will not need to ask Wikipedia again and our program will run much faster.</p>
 
 <h3>
 <a id="why-wikipedia-and-not-a-more-traditional-geolocation-service-ex-open-maps-google-maps-geocodes-etc" class="anchor" href="#why-wikipedia-and-not-a-more-traditional-geolocation-service-ex-open-maps-google-maps-geocodes-etc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why wikipedia and not a more traditional geolocation service? (Ex: Open maps, Google maps, Geocodes, etc...)</h3>
 
-<p>Wikipedia give us the chance to develop a personalize tools for almost any language. In this first beta version the corpus of news (text) is in catalan, but we can adapt relatively easy the package to work on any language. 
-Also , the Wikipedia API give us the chance to create contents of "augmented reality", we do not limit to the content of the corpus under analysis , we can improved and mix with new information. </p>
+<p>One of the first challenges when developing the aforementioned script was to chose  a good source of geolocation places. First, we thought of loading a static database like The Cartography Catalan Service. However, it only has town and city names, which is not enough for our purposes. Other sources of information, like Geonames and Google maps, are fetched with too much un-hierarchized information. 
+The local Wikipedia, in our case the catalan version, provides us with the necessary positive bias needed to accomplish our task, as it gives more weight to those entities that are more relevant to the local targeted community.
+Also Wikipedia give us the chance to develop a personalize tools for almost any language. In this first beta version the corpus of news (text) is in catalan, but we can adapt relatively easy the package to work on any language. 
+Also , the Wikipedia API give us the chance to create contents of "augmented reality", we do not limit to the content of the corpus under analysis , we can improved and mix with new information.  </p>
 
 <h2>
 <a id="some-examples" class="anchor" href="#some-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some Examples</h2>
