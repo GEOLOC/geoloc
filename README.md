@@ -85,7 +85,7 @@ Examples
 import geoloc
 knowledge=geoloc.knowledge_dictionary()
 knowledge.load_json(“knowledge_ca.json”)
-x=“L’Ajuntament de Barcelona suspèn la construcció de nous hotels a tota la ciutat.”
+x="""L’Ajuntament de Barcelona suspèn la construcció de nous hotels a tota la ciutat."""
 print geoloc.geolocalize(x,knowledge)
 ```
 
@@ -94,7 +94,7 @@ import geoloc
 geoloc.set_lang(‘en’)
 knowledge=geoloc.knowledge_dictionary()
 print knowledge
-x=“Eurozone finance chiefs have warned of tough negotiations ahead as they meet to decide whether Greece's new reform proposals merit a third debt bailout.”
+x="""Eurozone finance chiefs have warned of tough negotiations ahead as they meet to decide whether Greece's new reform proposals merit a third debt bailout."""
 print geoloc.geolocalize(x,knowledge)
 print knowledge
 ```
