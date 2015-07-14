@@ -1,7 +1,7 @@
 Geoloc
 =========
 
-Geoloc is a python package that identifies the places mentioned by a given text.
+Geoloc is a python package that identifies the places mentioned in a given text.
 
 Dependencies
 ----
