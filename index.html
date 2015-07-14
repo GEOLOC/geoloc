@@ -20,67 +20,69 @@
 
     <section class="main-content">
       <h1>
-<a id="geolocate-package-for-any-text" class="anchor" href="#geolocate-package-for-any-text" aria-hidden="true"><span class="octicon octicon-link"></span></a>Geolocate package for any text</h1>
+<a id="geoloc-package" class="anchor" href="#geoloc-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Geoloc package</h1>
 
-<p>This package can be used on any text that has a word that can be geolocated,for instance the name of a city, a town, an important monument or place.</p>
-
-<p>The first purpose of this package is geolocalize news that previously have not been tagged on any place. In a first step the script identifies all the words that begin with capital letters. For instances, proper personal names "Carlos, Laia, Joan", as well as places: "Barcelona, New York, Notre Dam, Eiffel Tower , etc". The script creates a python dictionary of all the capitalizes word and in this list of word, the script checks if the word can be geolocated.</p>
-
-<p>If you are a news agency that has a huge database of news, but that has never been geolocalized all your information, this software is designed for you; if you are a journalist that has to cover any report but are not sure where are exactly the places that you must include in your text, the software automatically geolocates all the places that you include in the document. In a similar way if you are a professor  that wants to teach a little bit of geography to your students, this can be a good tool that helps them also to practice their writing. There are multiple uses, maybe more than we can imagine. </p>
+<p>Geoloc is a python package that identifies the places mentioned in a given text.
+The possible practical applications of this package are the following: imagine you work for a certain news agency, like TV3, and you would like to know how this agency treats the different areas in which it is emitted. Our program could help you do that with just a mouse-click. Now imagine that you are a middle school Geography teacher. You could use our interactive program to foster your students’ interest in this discpline. There are many other applications we can think of, but we believe that, if you read this description and you get to know how the program works, you yourself will come up with several ones.</p>
 
 <h2>
-<a id="how-the-script-geolocalized" class="anchor" href="#how-the-script-geolocalized" aria-hidden="true"><span class="octicon octicon-link"></span></a>How the script geolocalized.</h2>
+<a id="how-does-the-script-geolocalize" class="anchor" href="#how-does-the-script-geolocalize" aria-hidden="true"><span class="octicon octicon-link"></span></a>How does the script geolocalize?</h2>
 
 <p><img src="https://cloud.githubusercontent.com/assets/7750268/8619618/bab088c2-2718-11e5-87a4-11839a043acb.PNG" alt=""></p>
 
-<p>The software uses the wikipedia API <em>(Application Programming Interface)</em> in a first stage. Each time it comes across a new word (or a compound expression) that begins with a capital letter, our program connects with Wikipedia and checks if the word page has coordinates. If it doesn’t, or there is no article for this word, the word is saved in our dictionary with a 0. On the other hand, if the Wikipedia api  positively responds to our coordinate request, we store both the coordinates and the word.
+<p>This software uses the wikipedia API (Application Programming Interface) in a first stage. Each time it comes across a new word (or a compound expression) that begins with a capital letter, our program connects with Wikipedia and checks if the word page has coordinates. If it doesn’t, or if there is no article for this word, the word is saved in our dictionary with a 0. On the other hand, if the Wikipedia API positively responds to our coordinate request, we store both the coordinates and the word.
 Therefore, if we happen to encounter again one of these words, we will not need to ask Wikipedia again and our program will run much faster.</p>
 
 <h3>
-<a id="why-wikipedia-and-not-a-more-traditional-geolocation-service-ex-open-maps-google-maps-geocodes-etc" class="anchor" href="#why-wikipedia-and-not-a-more-traditional-geolocation-service-ex-open-maps-google-maps-geocodes-etc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why wikipedia and not a more traditional geolocation service? (Ex: Open maps, Google maps, Geocodes, etc...)</h3>
+<a id="why-wikipedia-instead-of-other-geolocation-services-open-maps-google-maps-geonames" class="anchor" href="#why-wikipedia-instead-of-other-geolocation-services-open-maps-google-maps-geonames" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why Wikipedia instead of other geolocation services (Open maps, Google maps, Geonames…)?</h3>
 
-<p>One of the first challenges when developing the aforementioned script was to chose  a good source of geolocation places. First, we thought of loading a static database like The Cartography Catalan Service. However, it only has town and city names, which is not enough for our purposes. Other sources of information, like Geonames and Google maps, are fetched with too much un-hierarchized information. 
-The local Wikipedia, in our case the catalan version, provides us with the necessary positive bias needed to accomplish our task, as it gives more weight to those entities that are more relevant to the local targeted community.
-Also Wikipedia give us the chance to develop a personalize tools for almost any language. In this first beta version the corpus of news (text) is in catalan, but we can adapt relatively easy the package to work on any language. 
-Also , the Wikipedia API give us the chance to create contents of "augmented reality", we do not limit to the content of the corpus under analysis , we can improved and mix with new information.  </p>
+<p>One of the first challenges when developing the aforementioned script was to chose a good source of information. First, we thought of loading a static database like The Cartography Catalan Service. However, it has only town and city names, which is not enough for our purposes. On the other hand, other sources of information, like Geonames and Google maps, are fetched with too much un-hierarchized information. 
+The local Wikipedia, in our case the catalan version, provides us with the necessary positive bias needed to accomplish our task, as it gives more weight to those entities that are more relevant to the local targeted community. 
+One of the other advantadges of using Wikipedia is that our program can run on any language. However, it is optimized to run in Catalan, as the structure of compound expressions depends from language to language and we deliveretely designed it to excel in Catalan. With minor changes, we have also prepared the program for dealing with Spanish, English, French and German, and it does perform incredibly well on these. You will find some examples in different languages in the repository (<a href="https://github.com/GEOLOC/geoloc">https://github.com/GEOLOC/geoloc</a>). As an example, when we analyze elpais_es_grecia.txt we obtain Berlín, París, Roma, Madrid and BCE. In bbc_en_greece.txt we find Greece, Brussels, Athens, IMF and France.</p>
+
+<h3>
+<a id="how-do-we-identify-compound-nouns" class="anchor" href="#how-do-we-identify-compound-nouns" aria-hidden="true"><span class="octicon octicon-link"></span></a>How do we identify compound nouns?</h3>
+
+<p>Another difficulty we had to face when developping the script was that compound names are relatively common in romance languages. Expressions like “Santa Maria del Mar” or “Sagrada Família” would never be geolocated if we only analyzed those words that start with a capital letter. Without going into further detail, let us just say that we modified the script so that it knew how to deal with these expressions.
+In fact, once these modifications were made, as it is common in Computer Science, we encountered problems that arose from these same changes: there is no page in Wikipedia entitled “Jocs d’Hivern de Sotxi” (Sochi Winter Games) and therefore, our program wouldn’t be aware that this sentence makes clear reference to “Sotxi”, a well-known Russian city. However, the program now works well and can correctly analyze any compound expression.
+With these changes, if we run our program on the news emitted by TV3 throughout the year 2014, it turns out that we can geolocate more than 90% of such news.</p>
 
 <h2>
-<a id="some-examples" class="anchor" href="#some-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some Examples</h2>
+<a id="how-can-we-visualize-the-results" class="anchor" href="#how-can-we-visualize-the-results" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can we visualize the results?</h2>
+
+<p>We tested different visualization programs but, given that we are focusing on geolocalization, we decided to use CartoDB, which is free and very easy to use. Let us present here some of the maps we made.</p>
+
+<h3>
+<a id="some-examples" class="anchor" href="#some-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some Examples</h3>
+
+<p>The first map we created was a dynamic visualization of the covered locations by TV3 on a daily-basis. In fact, this is a pretty boring map because, to a great extent, the same regions keep popping up day after day. However, this is actually the purpose of the map: to let people see how repetitive news really are.</p>
 
 <p><img src="https://cloud.githubusercontent.com/assets/7750268/8593697/4e1f3e08-263a-11e5-97ee-491c7b02e933.png" alt=""></p>
 
-<p>The figure above is an example of a heat map day by day of the news activity during 2014.</p>
+<p>The second map is of a similar nature: it shows the 4-day-aggregated covered locations by TV3, so it is better than the previous one for getting a glimpse of what TV3 talks about. But it serves a better purpose: as this visualization has been made with real news, we can try to remember some of the major events that took place in 2014 and check if they are indeed represented in the map. I am sure the reader remembers the terrible Ebola outbreak that took hold in West Africa, which caught for the first time the international press agency’s attention on August 2014. This change in coverage can be perfectly seen in our map. At the same time, let us remember that a Malaysia Airlines flight disappeared with 227 people on board on 8 March 2014; an event also represented in our map. At this stage, we invite the reader to think of a major event occured in 2014 and check if it does show up in the aforementioned visualisation. </p>
 
 <p><img src="https://cloud.githubusercontent.com/assets/7750268/8593743/c2abf31a-263a-11e5-84f3-5227f8ccd616.png" alt=""></p>
 
-<p>In the previous figure we can also observe a head map, but we modify the period of change (three days of differences) to perceive better  dynamic of the news saliency on different places. </p>
+<p>Last but not least, let us present an interactive map of all the different locations covered by TV3 throughout the year. If you click on one of the little orange spots, you will be able to see the name of the entity it represents and a list of numbers. These correspond to the news ids that mentioned this place.</p>
 
 <p><img src="https://cloud.githubusercontent.com/assets/7750268/8593797/3b777e2c-263b-11e5-8f37-5427c78a8081.png" alt=""></p>
 
-<p>Finally, in the figure above we show the set of news on the territory , when you select a node immediately you see the code of the different news that are associated with that place. </p>
+<p>If you type in the top right box “Barcelona”, you will see that there are lots of different geolocated entities within Barcelona. As we explained before, our program recognizes compound expressions and therefore, things like “Universitat de Barcelona”, “Ajuntament de Barcelona” and “Hospital Clínic de Barcelona” are assigned different coordinates, resulting in a very rich and complete map.</p>
 
-<p>The interactive figures are published in this link, where you can find a more detail explanation of this script and the results<a href="http://geolocnews.tumblr.com/Geoloc">http://geolocnews.tumblr.com/Geoloc</a></p>
-
-<h2>
-<a id="readme-how-to-run-this-script" class="anchor" href="#readme-how-to-run-this-script" aria-hidden="true"><span class="octicon octicon-link"></span></a>README <em>(How to run this script)</em>
-</h2>
-
-<p>This script is in python (v.2.7) to run it you need the following packages: </p>
-
-<ul>
-<li>pip install wikipedia</li>
-<li>pip install re</li>
-<li>pip install json</li>
-<li>pip install panda </li>
-</ul>
+<p>The interactive figures are published in this link: <a href="http://geolocnews.tumblr.com">http://geolocnews.tumblr.com</a></p>
 
 <h2>
-<a id="authors-alphabetic-order" class="anchor" href="#authors-alphabetic-order" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors (alphabetic order)</h2>
+<a id="authors-alphabetical-order" class="anchor" href="#authors-alphabetical-order" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors (alphabetical order)</h2>
 
-<p>Roderic Guigo, Jorge L Salcedo, Adrià San José, Manel Vila, Josep Zapata. </p>
+<p>Roderic Guigó Corominas, Jorge L. Salcedo Maldonado, Adrià San José Plana, Manel Vila Vidal, Josep Zapata García</p>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<h2>
+<a id="repository-and-readme" class="anchor" href="#repository-and-readme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Repository and Readme</h2>
+
+<p><a href="https://github.com/GEOLOC/geoloc">https://github.com/GEOLOC/geoloc </a></p>
+
+<h2>
+<a id="support-and-contact" class="anchor" href="#support-and-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support and Contact</h2>
 
 <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
 
