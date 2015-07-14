@@ -23,7 +23,7 @@ Usage
 Three possibilities:
 
 ### 1. On a terminal ###
-Run ```python geoloc.py``` in your terminal and follow the on-screen instructions. As the program analyzes text, it saves all the expressions that it comes across in a dictionary, that we call knowledge. The created knowledge can be saved in json format after running the program. A json knowlege file can also be loaded before analyzing text.
+Run ```python geoloc.py``` in your terminal and follow the on-screen instructions. As the program analyzes text, it saves all the expressions that it comes across in a dictionary, that we call knowledge. The created knowledge can be saved in json format after running the program. A json knowlege file can also be loaded before analyzing text. A catalan knowledge is provided with around 40 000 entries.
 
 ### 2. On a GUI ###
 
@@ -59,10 +59,12 @@ knowledge.load_tsv(filename)
 knowledge.save_json(filename)
 knowledge.load_tsv(filename)
 ```
-- knowledge.load_json(filename) loads a json knowledge file to your dictionary. Previous information will be erased. To avoid that use knowledge.update(old_dictionary) function.
+- knowledge.load_json(filename) loads a json knowledge file to your dictionary. Any previous information will be erased. To avoid this happening use the knowledge.update(old_dictionary) function.
 - knowledge.load_tsv(filename) loads a tsv.
 - knowledge.save_json(filename) saves your dictionary to a json knowledge file.
 - knowledge.save_tsv(filename) saves your dictionary to a tsv file.
+
+A catalan knowledge is provided with around 40 000 entries.
 
 Run
 ```python
