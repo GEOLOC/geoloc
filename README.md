@@ -98,3 +98,5 @@ x="""Eurozone finance chiefs have warned of tough negotiations ahead as they mee
 print geoloc.geolocalize(x,knowledge)
 print knowledge
 ```
+
+Run geoloc.py to analyze the files contained in the folder example_news.
