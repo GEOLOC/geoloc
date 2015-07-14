@@ -22,18 +22,16 @@
       <h1>
 <a id="geoloc-package" class="anchor" href="#geoloc-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Geoloc package</h1>
 
-<p>Geoloc is a python package that identifies the places mentioned in a given text.  </p>
-
-<p>The possible practical applications of this package are the following: imagine you work for a certain news agency, like TV3, and you would like to know how this agency treats the different areas in which it is emitted. Our program could help you do that with just a mouse-click. Now imagine that you are a middle school Geography teacher. You could use our interactive program to foster your students’ interest in this discpline. There are many other applications we can think of, but we believe that, if you read this description and you get to know how the program works, you yourself will come up with several ones.</p>
+<p>Geoloc is a python package that identifies the places mentioned in a given text.<br>
+The possible practical applications of this package are the following: imagine you work for a certain news agency, like TV3, and you would like to know how this agency treats the different areas in which it is emitted. Our program could help you do that with just a mouse-click. Now imagine that you are a middle school Geography teacher. You could use our interactive program to foster your students’ interest in this discpline. There are many other applications we can think of, but we believe that, if you read this description and you get to know how the program works, you yourself will come up with several ones.</p>
 
 <h2>
 <a id="how-does-the-script-geolocalize" class="anchor" href="#how-does-the-script-geolocalize" aria-hidden="true"><span class="octicon octicon-link"></span></a>How does the script geolocalize?</h2>
 
 <p><img src="https://cloud.githubusercontent.com/assets/7750268/8619618/bab088c2-2718-11e5-87a4-11839a043acb.PNG" alt=""></p>
 
-<p>This software uses the wikipedia API (Application Programming Interface) in a first stage. Each time it comes across a new word (or a compound expression) that begins with a capital letter, our program connects with Wikipedia and checks if the word page has coordinates. If it doesn’t, or if there is no article for this word, the word is saved in our dictionary with a 0. On the other hand, if the Wikipedia API positively responds to our coordinate request, we store both the coordinates and the word.</p>
-
-<p>Therefore, if we happen to encounter again one of these words, we will not need to ask Wikipedia again and our program will run much faster.</p>
+<p>This software uses the wikipedia API (Application Programming Interface) in a first stage. Each time it comes across a new word (or a compound expression) that begins with a capital letter, our program connects with Wikipedia and checks if the word page has coordinates. If it doesn’t, or if there is no article for this word, the word is saved in our dictionary with a 0. On the other hand, if the Wikipedia API positively responds to our coordinate request, we store both the coordinates and the word.<br>
+Therefore, if we happen to encounter again one of these words, we will not need to ask Wikipedia again and our program will run much faster.</p>
 
 <h3>
 <a id="why-wikipedia-instead-of-other-geolocation-services-open-maps-google-maps-geonames" class="anchor" href="#why-wikipedia-instead-of-other-geolocation-services-open-maps-google-maps-geonames" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why Wikipedia instead of other geolocation services (Open maps, Google maps, Geonames…)?</h3>
