@@ -102,7 +102,7 @@ class SimpleSineApp(server.App):
         names=list(set(names))
 
 
-        world = io.imread("worldmap.jpg")
+        world = io.imread("https://upload.wikimedia.org/wikipedia/commons/f/f4/Mercator_projection_SW.jpg")
 
         mapWidth    = float(world.shape[1])
         mapHeight   = float(world.shape[0])
