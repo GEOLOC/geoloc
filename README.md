@@ -109,6 +109,6 @@ Citing
 
 If you use the source coude, please make sure to reference the package:
 
-Guigó Corminas, R., Salcedo, J. L., San José Plana, A., Vila-Vidal, M, & Zapta García, J. (2015). Geoloc v1.0, https://github.com/GEOLOC/geoloc. Zenodo. (*)
+> Guigó Corminas, R., Salcedo, J. L., San José Plana, A., Vila-Vidal, M, & Zapta García, J. (2015). Geoloc v1.0, https://github.com/GEOLOC/geoloc. Zenodo. (*)
 
 
