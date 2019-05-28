@@ -107,7 +107,7 @@ Run geoloc.py to analyze the files contained in the folder example_news.
 Citing
 ----
 
-If you use the source coude, please make sure to reference the package:
+If you use the source coude, please make sure to reference the package (authors listed in alphabetical order):
 
 > Guigó Corminas, R., Salcedo, J. L., San José Plana, A., Vila-Vidal, M, & Zapta García, J. (2015). Geoloc v1.0, https://github.com/GEOLOC/geoloc. GitHub.
 
